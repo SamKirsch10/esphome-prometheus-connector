@@ -1,0 +1,2 @@
+# esphome-prometheus-connector
+ESP Home devices with the web enabled have their sensors available. This allows a direct consumption of a prometheus collector versus attempting to get values proxied through Home Assistant.
