@@ -13,6 +13,5 @@ FROM debian
 ARG BINARY=app
 
 COPY --from=buildenv /app/$BINARY /app/run
-COPY example.yaml /app/
 
 ENTRYPOINT [ "/app/run" ]
