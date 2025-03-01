@@ -32,4 +32,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: skirsch10/esphome-prometheus-connector:${{ github.sha }}
+          tags: skirsch10/${{ github.event.repository.name }}:${{ github.sha }}
+          build-args: |
+            BINARY=${{ github.event.repository.name }}
