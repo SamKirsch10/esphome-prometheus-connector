@@ -10,7 +10,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o $BINARY
 
 FROM debian
 
-COPY --from=buildenv /app/$BINARY /app/
+COPY --from=buildenv /app/$BINARY /app/run
 COPY example.yaml /app/
 
-ENTRYPOINT [ "/app/$BINARY" ]
+ENTRYPOINT [ "/app/run" ]
