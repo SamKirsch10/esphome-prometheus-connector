@@ -2,12 +2,14 @@ package internal
 
 import (
 	"os"
+	"time"
 
 	"gopkg.in/yaml.v3"
 )
 
 type metricYaml struct {
-	Devices []struct {
+	Interval time.Duration `json:"interval"`
+	Devices  []struct {
 		Name    string   `json:"name"`
 		IP      string   `json:"ip"`
 		Metrics []string `json:"metrics"`

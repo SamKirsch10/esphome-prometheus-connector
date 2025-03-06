@@ -16,7 +16,8 @@ var YamlLocation string
 func Run(ctx context.Context) {
 	d := loadYaml()
 
-	t := time.NewTicker(10 * time.Second)
+	t := time.NewTicker(d.Interval)
+	log.Infof("checking for metrics every %d seconds", int(d.Interval.Seconds()))
 	gather(d)
 	for {
 		select {
